@@ -12,8 +12,8 @@ import java.util.stream.Collectors;
 @Repository
 public class DAORepository {
 
-    public String getSQL(String name) {
-        return read(name);
+    public String getSQL(String fileName) {
+        return read(fileName);
     }
 
     private static String read(String scriptFileName) {

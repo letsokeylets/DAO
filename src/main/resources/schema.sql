@@ -1,4 +1,4 @@
-create table CUSTOMERS
+create table if not exists CUSTOMERS
 (
     id      SERIAL PRIMARY KEY,
     name    VARCHAR(30),
@@ -6,7 +6,7 @@ create table CUSTOMERS
     age INTEGER,
     phone_number INTEGER
 );
-create table ORDERS
+create table if not exists ORDERS
 (
     id      SERIAL PRIMARY KEY,
     date    DATE,
