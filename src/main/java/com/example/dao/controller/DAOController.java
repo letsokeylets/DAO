@@ -1,24 +1,25 @@
 package com.example.dao.controller;
 
-import com.example.dao.Product;
 import com.example.dao.exception.NotFoundSqlException;
-import com.example.dao.service.DAOService;
+import com.example.dao.repository.DAORepository;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 
 @RestController
 @AllArgsConstructor
 @Data
 public class DAOController {
-    private final DAOService service;
+    private final DAORepository repository;
 
 
     @GetMapping("/products/fetch-product")
-    public Product getProduct(@RequestParam("name") String name) {
-        return service.getProductName(name);
+    public List<String> getProduct(@RequestParam("name") String name) {
+        return repository.getProductName(name);
     }
 
     @ResponseStatus(HttpStatus.UNAUTHORIZED)
